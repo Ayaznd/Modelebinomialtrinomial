@@ -33,15 +33,15 @@ def frPut(s0, k, r, T, sigma):
     d1, d2 = fonctrep(s0, k, r, sigma, T)
     P = k * np.exp(-r * T) * norm.cdf(-d2) - s0 * norm.cdf(-d1)
     return P
-
+def main():
 # --- Création des onglets ---
 #tabs = st.tabs(["Modèle Binomial", "Modèle Trinomial", "Modèle Black-Scholes"])
-tabs = st.tabs(["Modèle Binomial", "Modèle Trinomial", "Modèle Black-Scholes", "Comparaison et Convergence","Analyse de sensibilité (Greeks)"])
+ tabs = st.tabs(["Modèle Binomial", "Modèle Trinomial", "Modèle Black-Scholes", "Comparaison et Convergence","Analyse de sensibilité (Greeks)"])
 
 # ==================================================
 # ================= MODÈLE BINOMIAL ================
 # ==================================================
-with tabs[0]:
+ with tabs[0]:
     st.subheader("Modèle Binomial")
     st.markdown("### Paramètres")
 
@@ -83,7 +83,7 @@ with tabs[0]:
 # ==================================================
 # ================= MODÈLE TRINOMIAL ===============
 # ==================================================
-with tabs[1]:
+ with tabs[1]:
     st.subheader("Modèle Trinomial")
     st.markdown("### Paramètres")
 
@@ -123,7 +123,7 @@ with tabs[1]:
 # ==================================================
 # ============== MODÈLE BLACK-SCHOLES ==============
 # ==================================================
-with tabs[2]:
+ with tabs[2]:
     st.subheader("Modèle Black-Scholes")
     st.markdown("### Paramètres")
 
@@ -149,7 +149,7 @@ with tabs[2]:
 # ==================================================
 # =========== COMPARAISON ET CONVERGENCE ===========
 # ==================================================
-with tabs[3]:
+ with tabs[3]:
     st.subheader("Comparaison et Convergence des modèles")
     st.markdown("Visualisation de la convergence des modèles binomial et trinomial vers Black-Scholes quand le nombre de périodes augmente.")
 
@@ -219,7 +219,7 @@ with tabs[3]:
 # ==================================================
 # =========== ANALYSE DE SENSIBILITÉ ===============
 # ==================================================
-with tabs[4]:
+ with tabs[4]:
     st.subheader("Analyse de sensibilité (Greeks)")
     st.markdown("""
     Cette section permet de visualiser comment le **prix d'une option** et ses **Greeks** réagissent aux variations du prix du sous-jacent.
@@ -309,3 +309,5 @@ with tabs[4]:
 
         st.plotly_chart(fig, use_container_width=True)
 
+if __name__=="__main__":
+    main()
