@@ -321,3 +321,4 @@ def dessiner_arbre_trinomial(s0, T, sigma, r, q, n):
     )
 
     st.plotly_chart(fig, use_container_width=True)
+
